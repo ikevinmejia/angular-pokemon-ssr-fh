@@ -12,6 +12,12 @@
 <!-- TODO: botones de siguiente y atrás -->
 
 <div class="flex justify-between mt-4">
-  <button (click)="loadPokemon(-1)">Regresar</button>
-  <button (click)="loadPokemon(+1)">Siguiente</button>
+  <button
+  [routerLink]="['/pokemon/page', currentPage()! - 1]"
+  [disabled]="currentPage() === 1"
+
+  >Regresar</button>
+  <button
+  [routerLink]="['/pokemon/page', currentPage()! + 1]"
+  >Siguiente</button>
 </div>
